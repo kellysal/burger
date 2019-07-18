@@ -1,11 +1,9 @@
-//global
-const mysql = require("mysql");
+// Connect Node to MySQL.
+var mysql = require("mysql");
 
-// create connection
 if (process.env.JAWSDB_URL) {
     connection = mysql.createConnection(process.env.JAWSDB_URL);
-}
-else {
+} else {
     connection = mysql.createConnection({
         host: "localhost",
         user: "root",
@@ -14,7 +12,6 @@ else {
     });
 };
 
-// Make connection
 connection.connect(function (err) {
     if (err) {
         console.error("error connecting: " + err.stack);
@@ -23,5 +20,5 @@ connection.connect(function (err) {
     console.log("connected as id " + connection.threadId);
 });
 
-//export connection
+// Export the connection.
 module.exports = connection;
