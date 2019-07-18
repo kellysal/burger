@@ -1,6 +1,7 @@
+// Make sure we wait to attach our handlers until the DOM is fully loaded.
 $(function () {
 
-    // Add a new burger
+    // Add a new burger.
     $(".create-form").on("submit", function (event) {
         event.preventDefault();
 
@@ -9,14 +10,13 @@ $(function () {
             devoured: 0
         };
 
-        // POST request
+        // Send the POST request.
         $.ajax("/api/burgers", {
             type: "POST",
             data: newBurger
         }).then(function () {
-            console.log("New Burger Added!");
-
-            // Reload for new burger list
+            console.log("Added new burger");
+            // Reload the page to get the updated burger list.
             location.reload();
         });
     });
@@ -29,13 +29,12 @@ $(function () {
             devoured: 1
         };
 
-        // PUT request
+        // Send the PUT request.
         $.ajax("/api/burgers/" + id, {
             type: "PUT",
             data: devouredState
         }).then(function () {
-            console.log("Burger devoured!");
-            // Reload for updated list
+            console.log("Burger devoured");
             location.reload();
         });
     });
@@ -45,7 +44,7 @@ $(function () {
 
         var id = $(this).data("id");
 
-        //DELETE request
+        // Send the DELETE request.
         $.ajax({
             type: "DELETE",
             url: "/api/burgers/" + id

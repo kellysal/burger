@@ -1,58 +1,34 @@
-<div class="container">
+<!DOCTYPE html>
+<html lang="en">
 
-    <div class="jumbotron">
-        <h1 id="color-override">Eat Burger</h1>
-        <p id="color-override">Make burgers, eat burgers</p>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Burgers</title>
 
-        <h2 id="color-override">Make a burger</h2>
+    <!-- JQUERY -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
 
-        <panel>
-            <form class="create-form">
-                <div class="form-group">
-                    <label for="newburger" id="color-override">New Burger:</label>
-                    <input type="text" id="newburger" name="burger">
+    <!-- BOOTSTRAP CSS & JS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
-                    <button type="submit" class="btn btn-success" id="addburger"><span
-                            class="fa fa-thumbs-up"></span></button>
-                </div>
-            </form>
-        </panel>
-    </div>
+    <!-- STYLES -->
+    <link rel="stylesheet" href="/assets/css/burger_style.css" type="text/css" />
 
-    <div class="row">
-        <div class="col-sm-6">
-            <div class="panel panel-default">
-                <div class="panel-heading" id="lefthead">New Burgers</div>
-                <div class="panel-body">
-                    <ul>
-                        {{#each burgers}}
-                        {{#unless devoured}}
-                        <span><strong>{{this.id}} - {{this.burger_name}}</strong></span>
-                        <button type="button" class="eatburger btn btn-warning" id="eatbutton" data-id="{{this.id}}"
-                            data-newDevoured="{{devour}}"><span class="fa fa-cutlery"></span></button>
-                        <hr>
-                        {{/unless}}
-                        {{/each}}
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-6">
-            <div class="panel panel-default">
-                <div class="panel-heading" id="righthead"><strong>Devoured Burgers</strong></div>
-                <div class="panel-body"></div>
-                <ul>
-                    {{#each burgers}}
-                    {{#if devoured}}
-                    <span><strong>{{this.id}} - {{this.burger_name}}</strong></span>
-                    <button type="button" class="trashburger btn btn-danger" id="trashbutton" data-id="{{this.id}}"
-                        data-newDevoured="{{devour}}"><span class="fa fa-trash"></span></button>
-                    <hr>
-                    {{/if}}
-                    {{/each}}
-                </ul>
-            </div>
-        </div>
-    </div>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
 
-</div>
+<body>
+
+    {{{body}}}
+
+    <!-- JS -->
+    <script src="/assets/js/burgers.js"></script>
+
+</body>
+
+</html>
