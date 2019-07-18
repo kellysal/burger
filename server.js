@@ -1,17 +1,16 @@
 //dependencies
-
 const express = require("express");
+const bodyParser = require("body-parser");
 
 const app = express();
-
 var PORT = process.env.PORT || 3000;
 
 // Serve static content for the app from the "public" directory in the application directory
 app.use(express.static("public"));
 
 // Parse application body
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 
 // Set Handlebars
 var exphbs = require("express-handlebars");
